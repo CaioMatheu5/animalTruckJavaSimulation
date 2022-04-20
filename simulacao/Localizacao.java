@@ -83,5 +83,9 @@ public class Localizacao {
         return "(" + x + ", " + y + ")";
     }
     
+
+    public int calcularDistancia(Localizacao outraLocalizacao){
+        return Math.abs(getX() - outraLocalizacao.getX()) + Math.abs(getY() - outraLocalizacao.getY());
+    }
     
 }

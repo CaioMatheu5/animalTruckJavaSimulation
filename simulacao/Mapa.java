@@ -9,9 +9,11 @@ public class Mapa {
     private int largura;
     private int altura;
     
-    private static final int LARGURA_PADRAO = 35;
-    private static final int ALTURA_PADRAO = 35;
+    private static final int LARGURA_PADRAO = 34;
+    private static final int ALTURA_PADRAO = 34;
     
+    private static int[][] ruas;
+
     /**
      * Cria mapa para alocar itens da simulacao.
      * @param largura: largura da área de simulacao.
@@ -21,6 +23,16 @@ public class Mapa {
         this.largura = largura;
         this.altura = altura;
         itens = new Item[altura][largura];
+        ruas = new int[altura][largura];
+        gerarRuas();
+        for(int i = 0; i < altura; i++){
+            for(int j = 0; j < largura; j++){
+               System.out.print(ruas[i][j] + " ");
+            }
+            System.out.println();
+        }
+        
+
     }
     /**
      * Cria mapa com tamanho padrao.
@@ -53,5 +65,15 @@ public class Mapa {
     public int getAltura() {
         return altura;
     }
-    
+
+    private void gerarRuas(){
+        for(int i = 0; i < altura; i++){
+            for(int j = 0; j < largura; j++){
+                if( i % 3 == 0 || j % 3 == 0){
+                    ruas[i][j] = 1;
+                }
+            }
+        }
+    }
+
 }
