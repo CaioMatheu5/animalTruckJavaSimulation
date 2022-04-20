@@ -29,5 +29,4 @@ public class Semaforo extends Item implements Atualizavel{
             super.setImagem(new ImageIcon(getClass().getResource("Imagens/SemaforoVermelho.png")).getImage());
         }
     }
-
 }

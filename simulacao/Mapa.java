@@ -76,4 +76,8 @@ public class Mapa {
         }
     }
 
+    public int getRua(int x, int y){
+        return ruas[x][y];
+    }
+
 }
