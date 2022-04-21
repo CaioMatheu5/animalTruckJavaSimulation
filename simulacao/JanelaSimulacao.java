@@ -77,7 +77,7 @@ public class JanelaSimulacao extends JFrame{
         /**
          * Prepara para um novo ciclo de exibicao. Uma vez que o componente
          * pode ser redimensionado, calcula o "fator de escala" novamente.
-         */
+         **/
         public void preparePaint()
         {
             if(!tamanho.equals(getSize())) {  // se o tamanho mudou...
@@ -94,8 +94,22 @@ public class JanelaSimulacao extends JFrame{
                     yScale = VIEW_SCALING_FACTOR;
                 }
             }
-            g.setColor(Color.red);
+
+            g.setColor(Color.white);
             g.fillRect(0, 0, tamanho.width, tamanho.height);
+
+            int posX = 0;
+            int posY = 0;
+            for(int i = 0; i < alturaMapa; i++){
+                posX = 0;
+                for(int j = 0; j < larguraMapa; j++){
+                    g.setColor(mapa.getRua(i, j) == 1 ? Color.lightGray : Color.green);
+                    g.fillRect(posX, posY, xScale, yScale);
+                    posX += xScale;
+                }
+                posY += yScale;
+            }
+
             g.setColor(Color.gray);
             for(int i = 0, x = 0; x < tamanho.width; i++, x = i * xScale) {
                 g.drawLine(x, 0, x, tamanho.height - 1);

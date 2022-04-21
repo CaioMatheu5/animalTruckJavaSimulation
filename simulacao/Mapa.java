@@ -25,14 +25,6 @@ public class Mapa {
         itens = new Item[altura][largura];
         ruas = new int[altura][largura];
         gerarRuas();
-        for(int i = 0; i < altura; i++){
-            for(int j = 0; j < largura; j++){
-               System.out.print(ruas[i][j] + " ");
-            }
-            System.out.println();
-        }
-        
-
     }
     /**
      * Cria mapa com tamanho padrao.
