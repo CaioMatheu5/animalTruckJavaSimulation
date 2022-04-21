@@ -1,10 +1,13 @@
 package simulacao;
 
 /**
- * Representa um mapa com todos os itens que participam da simulacao
+ * Representa um mapa com todos os itens que participam da simulacao usando de singleton
  * @author David J. Barnes and Michael Kolling and Luiz Merschmann
  */
 public class Mapa {
+    
+    private static Mapa mapa;
+    
     private Item[][] itens;
     private int largura;
     private int altura;
@@ -19,7 +22,7 @@ public class Mapa {
      * @param largura: largura da área de simulacao.
      * @param altura: altura da área de simulação.
      */
-    public Mapa(int largura, int altura) {
+    private Mapa(int largura, int altura) {
         this.largura = largura;
         this.altura = altura;
         itens = new Item[altura][largura];
@@ -29,10 +32,17 @@ public class Mapa {
     /**
      * Cria mapa com tamanho padrao.
      */
-    public Mapa(){
+    private Mapa(){
         this(LARGURA_PADRAO,ALTURA_PADRAO);
     }
-    
+
+    public static Mapa getMapa(){
+        if(mapa == null){
+            mapa = new Mapa();
+        }
+        return mapa;
+    }
+
     public void adicionarItem(Item v){
         itens[v.getLocalizacao().getX()][v.getLocalizacao().getY()] = v;
     }

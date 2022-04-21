@@ -12,7 +12,7 @@ public class Simulacao {
     private Mapa mapa;
     
     public Simulacao() {
-        mapa = new Mapa();
+        mapa = Mapa.getMapa();
         atualizaveis = new ArrayList<Atualizavel>();
         gerarItens();
         janelaSimulacao = new JanelaSimulacao(mapa);
@@ -22,7 +22,7 @@ public class Simulacao {
         Random random = new Random(2345678);
         int largura = mapa.getLargura();
         int altura = mapa.getAltura();
-        int quantidadeItens = 5;
+        int quantidadeItens = 10;
         gerarObras(random, altura, largura, quantidadeItens);
         gerarSemaforos(random, altura, largura, quantidadeItens);
         gerarAnimais(random, altura, largura, quantidadeItens);
@@ -31,14 +31,14 @@ public class Simulacao {
  
     private void gerarObras(Random random, int altura,int largura, int quantidadeItens){
         for(int i = 0; i < quantidadeItens;i++){
-            Obra obra = new Obra(gerarLocalizaoAleatoria(random, largura, altura));
+            Obra obra = new Obra(Obra.gerarLocalizaoAleatoria(random, largura, altura));
             mapa.adicionarItem(obra);
         }
     }
 
     private void gerarSemaforos(Random random, int altura,int largura, int quantidadeItens){
         for(int i = 0; i < quantidadeItens;i++){
-            Semaforo semaforo = new Semaforo(gerarLocalizaoAleatoria(random, largura, altura));
+            Semaforo semaforo = new Semaforo(Semaforo.gerarLocalizaoAleatoria(random, largura, altura));
             mapa.adicionarItem(semaforo);
             adicionarAtualizavel(semaforo);
         }
@@ -46,30 +46,18 @@ public class Simulacao {
 
     private void gerarAnimais(Random random, int altura,int largura, int quantidadeItens){
         for(int i = 0; i < quantidadeItens;i++){
-            Animal animal = new Animal(gerarLocalizaoAleatoria(random, largura, altura));
+            Animal animal = new Animal(Animal.gerarLocalizaoAleatoria(random, largura, altura));
             mapa.adicionarItem(animal);
         }
     }
 
     private void gerarVeiculos(Random random, int altura,int largura, int quantidadeItens){
         for(int i = 0; i < 5;i++){
-            Veiculo veiculo = new Veiculo(gerarLocalizaoAleatoria(random, largura, altura));
-            veiculo.setLocalizacaoDestino(gerarLocalizaoAleatoria(random, largura, altura));
+            Veiculo veiculo = new Veiculo(Veiculo.gerarLocalizaoAleatoria(random, largura, altura));
+            veiculo.setLocalizacaoDestino(Veiculo.gerarLocalizaoAleatoria(random, largura, altura));
             mapa.adicionarItem(veiculo);
             adicionarAtualizavel(veiculo);
         } 
-    }
-
-    /**
-     * @return Retorna uma nova localização aleatória vazia no mapa
-     */
-    private Localizacao gerarLocalizaoAleatoria(Random random ,int largura, int altura){
-        Localizacao localizacao;
-        do{
-            localizacao = new Localizacao(random.nextInt(largura),random.nextInt(altura));
-        }while(mapa.getItem(localizacao.getX(), localizacao.getY()) != null );
-
-        return localizacao;
     }
 
     public void executarSimulacao(int numPassos){
