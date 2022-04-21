@@ -1,5 +1,7 @@
 package simulacao;
 
+import simulacao.grafo.Grafo;
+
 /**
  * Representa um mapa com todos os itens que participam da simulacao usando de singleton
  * @author David J. Barnes and Michael Kolling and Luiz Merschmann
@@ -28,6 +30,7 @@ public class Mapa {
         itens = new Item[altura][largura];
         ruas = new int[altura][largura];
         gerarRuas();
+        new Grafo(this);
     }
     /**
      * Cria mapa com tamanho padrao.
@@ -80,6 +83,10 @@ public class Mapa {
 
     public int getRua(int x, int y){
         return ruas[x][y];
+    }
+
+    public static int[][] getRuas() {
+        return ruas;
     }
 
 }
