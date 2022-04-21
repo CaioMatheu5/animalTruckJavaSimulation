@@ -12,20 +12,37 @@ public class Veiculo extends Item implements Atualizavel{
 
     private Localizacao localizacaoDestino;
 
+    /**
+     * Cria  um veículo a partir de uma localizacao.
+     * @param localizacao
+     */
     public Veiculo(Localizacao localizacao) {
         super(localizacao);
         super.setImagem(new ImageIcon(getClass().getResource("Imagens/CaminhaoBaixoCima.png")).getImage());
         localizacaoDestino = null;
     }
 
+    /**
+     * Método que retorna uma localizacao de destino.
+     * @return Localizacao
+     */
     public Localizacao getLocalizacaoDestino() {
         return localizacaoDestino;
     }
-     
+    
+    /**
+     * Método que atribui uma localizacao de destino.
+     * @param localizacaoDestino
+     */
     public void setLocalizacaoDestino(Localizacao localizacaoDestino) {
         this.localizacaoDestino = localizacaoDestino;
     }
     
+    /**
+     * Método responsável por definir como o veículo deve agir na janela de simulação.
+     * Caso o destino não seja nulo, é atribuido uma nova localização
+     * para o veículo e é atualizada a imagem do mesmo. 
+     */
     @Override
     public void executarAcao(){
         Localizacao destino = getLocalizacaoDestino();
@@ -36,9 +53,14 @@ public class Veiculo extends Item implements Atualizavel{
         }
     }
     
+    /**
+     * Método responsável por definir como a imagem do veículo deve ser atualizada.
+     * Tendo como parâmetro a proximaLocalizacao uma nova imagem é atribuída.
+     * @param proximaLocalizacao
+     */
     private void atualizarImagem(Localizacao proximaLocalizacao){
         Localizacao localizacaoAtual = super.getLocalizacao();
-        String caminhoImagem ;
+        String caminhoImagem;
         if(localizacaoAtual.getX() < proximaLocalizacao.getX()){
             caminhoImagem = "Imagens/CaminhaoDirEsq.png";
         }else if(localizacaoAtual.getX() > proximaLocalizacao.getX()){
@@ -52,6 +74,14 @@ public class Veiculo extends Item implements Atualizavel{
         super.setImagem(new ImageIcon(getClass().getResource(caminhoImagem)).getImage());
     }
 
+    /**
+     * Método responsável por gerar uma localização aleatória.
+     * 
+     * @param rand - objeto Random para gerar um número aleatório.
+     * @param altura - alura máxima do mapa.
+     * @param largura - largura máxima do mapa.
+     * @return Localizacao - uma localização aleatória válida, no caso, uma localização de rua.
+     */
     public static Localizacao gerarLocalizaoAleatoria(Random rand, int altura,int  largura){
         Localizacao localizacao;
         do{
@@ -61,6 +91,12 @@ public class Veiculo extends Item implements Atualizavel{
         return localizacao;
     }
 
+    /**
+     * Método responsável por validar uma localização.
+     * 
+     * @param localizacao
+     * @return boolean - true se e a localização não é ocupada e é uma rua, caso contrário retorna false. 
+     */
     protected  static boolean validarLocalizacao(Localizacao localizacao){
         Mapa mapa = Mapa.getMapa();
         return mapa.getItem(localizacao.getX(), localizacao.getY()) == null && mapa.getRua(localizacao.getX(), localizacao.getY()) == 1;

@@ -75,7 +75,7 @@ public class Localizacao {
     }
     
     /**
-     * @return A representacao da localizacao.
+     * @return A representação da localização.
      */
     @Override
     public String toString()
@@ -83,7 +83,11 @@ public class Localizacao {
         return "(" + x + ", " + y + ")";
     }
     
-
+    /**
+     * Método responsável por calcular a distância absoluta em realação a outra localização. 
+     * @param outraLocalizacao
+     * @return int - distância entre this e outraLocalizacao.
+     */
     public int calcularDistancia(Localizacao outraLocalizacao){
         return Math.abs(getX() - outraLocalizacao.getX()) + Math.abs(getY() - outraLocalizacao.getY());
     }
