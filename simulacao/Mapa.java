@@ -1,6 +1,9 @@
 package simulacao;
 
+import java.util.ArrayList;
+
 import simulacao.grafo.Grafo;
+import simulacao.grafo.Vertice;
 
 /**
  * Representa um mapa com todos os itens que participam da simulacao usando de singleton
@@ -30,7 +33,8 @@ public class Mapa {
         itens = new Item[altura][largura];
         ruas = new int[altura][largura];
         gerarRuas();
-        new Grafo(this);
+        Grafo g = new Grafo(this);
+        g.dijkstra(g.getV(0));
     }
     /**
      * Cria mapa com tamanho padrao.

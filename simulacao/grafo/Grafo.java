@@ -1,7 +1,7 @@
 package simulacao.grafo;
 
 import java.util.ArrayList;
-
+import java.util.PriorityQueue;
 import simulacao.Mapa;
 
 public class Grafo {
@@ -18,8 +18,15 @@ public class Grafo {
         inicializaVertice(h, w);
         inicializaAresta(h,w);
 
-        System.out.println(E.size());
+        for (Aresta e : E) {
+            System.out.println(e);
+        }
         
+        
+    }
+
+    public Vertice getV(int pos) {
+        return V.get(pos);
     }
 
     private void inicializaVertice(int h, int w){
@@ -74,4 +81,38 @@ public class Grafo {
         }
     }
     
+    public void dijkstra(Vertice s){
+        s.setDist(0);
+        PriorityQueue<Vertice> Q = new PriorityQueue<>();
+        Q.add(s);
+        ArrayList<Vertice> S = new ArrayList<>();
+
+        while (!Q.isEmpty()){
+
+            Vertice atual = Q.remove();
+            S.add(atual);
+
+            if (!atual.getVisitado()){
+                
+                atual.setVisitado(true);
+
+                for (Aresta e : this.E){
+                    Vertice u = e.getV1();
+                    Vertice v = e.getV2();
+
+                    if (v.getDist() > (u.getDist() + e.getPeso())){
+                        v.setDist(u.getDist() + e.getPeso());
+                        v.setPai(u);
+                        Q.add(v);
+                    }
+                }
+            }
+        }
+    }
+
+    public void caminho(Vertice d, ArrayList<Vertice> caminho){
+        caminho.add(d);
+        if (d.getPai() != null)
+            caminho(d.getPai(), caminho);
+    }
 }
