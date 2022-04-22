@@ -21,12 +21,12 @@ public class Obra extends Item{
     }
 
     /**
-     * Método responsável por gerar uma localização aleatória.
+     * Metodo responsavel por gerar uma localizacao aleatoria.
      * 
-     * @param rand - objeto Random para gerar um número aleatório.
-     * @param altura - alura máxima do mapa.
-     * @param largura - largura máxima do mapa.
-     * @return Localizacao - uma localização aleatória válida, no caso, uma rua que não seja intersecção.
+     * @param rand - objeto Random para gerar um numero aleatorio.
+     * @param altura - alura maxima do mapa.
+     * @param largura - largura maxima do mapa.
+     * @return Localizacao - uma localizacao aleatoria valida, no caso, uma rua que nao seja intersecção.
      */
     public static Localizacao gerarLocalizaoAleatoria(Random rand, int altura,int  largura){
         Localizacao localizacao;
@@ -38,10 +38,10 @@ public class Obra extends Item{
     }
     
     /**
-     * Método responsável por validar uma localização.
+     * Metodo responsavel por validar uma localizacao.
      * 
      * @param localizacao
-     * @return boolean - true se e a localização não é ocupada e é uma rua que não seja intersecção, caso contrário retorna false. 
+     * @return boolean - true se e a localizacao nao eh ocupada e eh uma rua que nao seja intersecção, caso contrario retorna false. 
      */
     protected static boolean validarLocalizacao(Localizacao localizacao){
         Mapa mapa = Mapa.getMapa();

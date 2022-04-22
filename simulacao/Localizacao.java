@@ -3,7 +3,7 @@ package simulacao;
 import java.util.Random;
 
 /**
- * Representa uma localização no mapa
+ * Representa uma localizacao no mapa
  * @author David J. Barnes and Michael Kolling and Luiz Merschmann
  */
 public class Localizacao {
@@ -12,7 +12,7 @@ public class Localizacao {
     private static Random rand = new Random();
     
     /**
-     * Representa uma localização na cidade
+     * Representa uma localizacao na cidade
      * @param x Coordenada x: deve ser maior ou igual a 0.
      * @param y Coordenada y: deve ser maior ou igual a 0.
      */
@@ -35,7 +35,7 @@ public class Localizacao {
      * @return Localizacao para onde se deve ir
      */
     public Localizacao proximaLocalizacao(Localizacao localizacaoDestino){
-        if(localizacaoDestino.equals(this)){//Verifica se já alcancou o destino
+        if(localizacaoDestino.equals(this)){//Verifica se ja alcancou o destino
             return localizacaoDestino;
         }else{
             int destX = localizacaoDestino.getX();
@@ -59,7 +59,7 @@ public class Localizacao {
     
     /**
      * Verificacao de igualdade de conteudo de objetos do tipo Localizacao.
-     * @return true: se a localizacao é igual.
+     * @return true: se a localizacao eh igual.
      *         false: caso contrario.
      */
     @Override
@@ -75,7 +75,7 @@ public class Localizacao {
     }
     
     /**
-     * @return A representação da localização.
+     * @return A representação da localizacao.
      */
     @Override
     public String toString()
@@ -84,9 +84,9 @@ public class Localizacao {
     }
     
     /**
-     * Método responsável por calcular a distância absoluta em realação a outra localização. 
+     * Metodo responsavel por calcular a distancia absoluta em realação a outra localizacao. 
      * @param outraLocalizacao
-     * @return int - distância entre this e outraLocalizacao.
+     * @return int - distancia entre this e outraLocalizacao.
      */
     public int calcularDistancia(Localizacao outraLocalizacao){
         return Math.abs(getX() - outraLocalizacao.getX()) + Math.abs(getY() - outraLocalizacao.getY());

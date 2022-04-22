@@ -13,7 +13,7 @@ public class Veiculo extends Item implements Atualizavel{
     private Localizacao localizacaoDestino;
 
     /**
-     * Cria  um veículo a partir de uma localizacao.
+     * Cria  um veiculo a partir de uma localizacao.
      * @param localizacao
      */
     public Veiculo(Localizacao localizacao) {
@@ -23,7 +23,7 @@ public class Veiculo extends Item implements Atualizavel{
     }
 
     /**
-     * Método que retorna uma localizacao de destino.
+     * Metodo que retorna uma localizacao de destino.
      * @return Localizacao
      */
     public Localizacao getLocalizacaoDestino() {
@@ -31,7 +31,7 @@ public class Veiculo extends Item implements Atualizavel{
     }
     
     /**
-     * Método que atribui uma localizacao de destino.
+     * Metodo que atribui uma localizacao de destino.
      * @param localizacaoDestino
      */
     public void setLocalizacaoDestino(Localizacao localizacaoDestino) {
@@ -39,9 +39,9 @@ public class Veiculo extends Item implements Atualizavel{
     }
     
     /**
-     * Método responsável por definir como o veículo deve agir na janela de simulação.
-     * Caso o destino não seja nulo, é atribuido uma nova localização
-     * para o veículo e é atualizada a imagem do mesmo. 
+     * Metodo responsavel por definir como o veiculo deve agir na janela de simulacao.
+     * Caso o destino nao seja nulo, eh atribuido uma nova localizacao
+     * para o veiculo e eh atualizada a imagem do mesmo. 
      */
     @Override
     public void executarAcao(){
@@ -54,8 +54,8 @@ public class Veiculo extends Item implements Atualizavel{
     }
     
     /**
-     * Método responsável por definir como a imagem do veículo deve ser atualizada.
-     * Tendo como parâmetro a proximaLocalizacao uma nova imagem é atribuída.
+     * Metodo responsavel por definir como a imagem do veiculo deve ser atualizada.
+     * Tendo como parametro a proximaLocalizacao uma nova imagem eh atribuida.
      * @param proximaLocalizacao
      */
     private void atualizarImagem(Localizacao proximaLocalizacao){
@@ -75,12 +75,12 @@ public class Veiculo extends Item implements Atualizavel{
     }
 
     /**
-     * Método responsável por gerar uma localização aleatória.
+     * Metodo responsavel por gerar uma localizacao aleatoria.
      * 
-     * @param rand - objeto Random para gerar um número aleatório.
-     * @param altura - alura máxima do mapa.
-     * @param largura - largura máxima do mapa.
-     * @return Localizacao - uma localização aleatória válida, no caso, uma localização de rua.
+     * @param rand - objeto Random para gerar um numero aleatorio.
+     * @param altura - alura maxima do mapa.
+     * @param largura - largura maxima do mapa.
+     * @return Localizacao - uma localizacao aleatoria valida, no caso, uma localizacao de rua.
      */
     public static Localizacao gerarLocalizaoAleatoria(Random rand, int altura,int  largura){
         Localizacao localizacao;
@@ -92,10 +92,10 @@ public class Veiculo extends Item implements Atualizavel{
     }
 
     /**
-     * Método responsável por validar uma localização.
+     * Metodo responsavel por validar uma localizacao.
      * 
      * @param localizacao
-     * @return boolean - true se e a localização não é ocupada e é uma rua, caso contrário retorna false. 
+     * @return boolean - true se e a localizacao nao eh ocupada e eh uma rua, caso contrario retorna false. 
      */
     protected  static boolean validarLocalizacao(Localizacao localizacao){
         Mapa mapa = Mapa.getMapa();

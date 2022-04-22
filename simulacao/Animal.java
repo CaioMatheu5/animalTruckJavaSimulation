@@ -13,7 +13,7 @@ public class Animal extends Item{
     private static int quantidade = 0;
 
     /**
-     * Método que retorna a quantidade de animais.
+     * Metodo que retorna a quantidade de animais.
      * @return int
      */
     public static int getQuantidade() {
@@ -33,19 +33,19 @@ public class Animal extends Item{
     }
 
     /**
-     * Método responsável por decrementar a quatidade de animais.
+     * Metodo responsavel por decrementar a quatidade de animais.
      */
     public void removerAnimal(){
         quantidade -= 1;
     }
 
     /**
-     * Método responsável por gerar uma localização aleatória.
+     * Metodo responsavel por gerar uma localizacao aleatoria.
      * 
-     * @param rand - objeto Random para gerar um número aleatório.
-     * @param altura - alura máxima do mapa.
-     * @param largura - largura máxima do mapa.
-     * @return Localizacao - uma localização aleatória válida, no caso, uma localização de rua.
+     * @param rand - objeto Random para gerar um numero aleatorio.
+     * @param altura - alura maxima do mapa.
+     * @param largura - largura maxima do mapa.
+     * @return Localizacao - uma localizacao aleatoria valida, no caso, uma localizacao de rua.
      */
     public static Localizacao gerarLocalizaoAleatoria(Random rand, int altura,int  largura){
         Localizacao localizacao;
@@ -57,10 +57,10 @@ public class Animal extends Item{
     }
     
     /**
-     * Método responsável por validar uma localização.
+     * Metodo responsavel por validar uma localizacao.
      * 
      * @param localizacao
-     * @return boolean - true se e a localização não é ocupada e é uma rua, caso contrário retorna false. 
+     * @return boolean - true se e a localizacao nao eh ocupada e eh uma rua, caso contrario retorna false. 
      */
     protected  static boolean validarLocalizacao(Localizacao localizacao){
         Mapa mapa = Mapa.getMapa();

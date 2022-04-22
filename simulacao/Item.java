@@ -4,7 +4,7 @@ import java.awt.Image;
 
 
 /**
- * Classe abstrata responsável por definir a base dos itens da simulação.
+ * Classe abstrata responsavel por definir a base dos itens da simulacao.
  * 
  * @author Caio M. L. Silva, Erick C. Silva, Felipe O. Fernandes e Jonathas L. Sousa
  */
@@ -21,7 +21,7 @@ public abstract class Item {
     }
 
     /**
-     * Método que retorna a localização do item.
+     * Metodo que retorna a localizacao do item.
      * @return Localizacao
      */
     public Localizacao getLocalizacao() {
@@ -29,7 +29,7 @@ public abstract class Item {
     }
 
     /**
-     * Método que retorna a imagem do item.
+     * Metodo que retorna a imagem do item.
      * @return Image
      */
     public Image getImagem() {
@@ -37,7 +37,7 @@ public abstract class Item {
     }
     
      /**
-     * Método que atribui uma localizacao de destino.
+     * Metodo que atribui uma localizacao de destino.
      * @param localizacaoDestino
      */
     public void setLocalizacao(Localizacao localizacao) {
@@ -45,7 +45,7 @@ public abstract class Item {
     }
 
  /**
-     * Método que atribui uma imagem.
+     * Metodo que atribui uma imagem.
      * @param imagem
      */
     public void setImagem(Image imagem) {

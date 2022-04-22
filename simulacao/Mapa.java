@@ -22,7 +22,7 @@ public class Mapa {
     /**
      * Cria mapa para alocar itens da simulacao.
      * @param largura: largura da área de simulacao.
-     * @param altura: altura da área de simulação.
+     * @param altura: altura da área de simulacao.
      */
     private Mapa(int largura, int altura) {
         this.largura = largura;
@@ -40,9 +40,9 @@ public class Mapa {
     }
     
     /**
-     * Método que retorna a referência do mapa.
+     * Metodo que retorna a referência do mapa.
      * 
-     * Instância o mapa, caso ainda não esteja instanciado.
+     * Instancia o mapa, caso ainda nao esteja instanciado.
      * @return Mapa
      */
     public static Mapa getMapa(){
@@ -53,7 +53,7 @@ public class Mapa {
     }
 
     /**
-     * Método responsável por adicior um item ao mapa;
+     * Metodo responsavel por adicior um item ao mapa;
      * @param v
      */
     public void adicionarItem(Item v){
@@ -61,7 +61,7 @@ public class Mapa {
     }
     
     /**
-     * Método responsável por remover um item ao mapa;
+     * Metodo responsavel por remover um item ao mapa;
      * @param v
      */
     public void removerItem(Item v){
@@ -69,7 +69,7 @@ public class Mapa {
     }
     
     /**
-     * Método responsável por atualizar um item no mapa;
+     * Metodo responsavel por atualizar um item no mapa;
      * @param v
      */
     public void atualizarMapa(Item v){
@@ -78,7 +78,7 @@ public class Mapa {
     }
     
     /**
-     * Método que retorna um item.
+     * Metodo que retorna um item.
      * 
      * @param x - coordenada X.
      * @param y - coordenada Y.
@@ -89,7 +89,7 @@ public class Mapa {
     }
 
     /**
-     * Método que retorna a largura máxima do mapa.
+     * Metodo que retorna a largura maxima do mapa.
      * 
      * @return int
      */
@@ -98,7 +98,7 @@ public class Mapa {
     }
 
     /**
-     * Método que retorna a altura máxima do mapa.
+     * Metodo que retorna a altura maxima do mapa.
      * 
      * @return int
      */
@@ -107,9 +107,9 @@ public class Mapa {
     }
 
     /**
-     * Método responsável por gerar esquema de ruas e ambientes.
+     * Metodo responsavel por gerar esquema de ruas e ambientes.
      * 
-     * Define como rua(1) coordenadas em que pelo um valor de eixo é divisível por 3. Caso contrario é um ambiente(0).
+     * Define como rua(1) coordenadas em que pelo um valor de eixo eh divisível por 3. Caso contrario eh um ambiente(0).
      */
     private void gerarRuas(){
         for(int i = 0; i < altura; i++){
@@ -122,7 +122,7 @@ public class Mapa {
     }
 
     /**
-     * Método que retorna se é uma rua ou um ambiente.
+     * Metodo que retorna se eh uma rua ou um ambiente.
      * 
      * @param x - coordenada X.
      * @param y - coordenada Y.
@@ -133,7 +133,7 @@ public class Mapa {
     }
 
     /**
-     *  Método que retorna a matriz com o esquema de ruas.
+     *  Metodo que retorna a matriz com o esquema de ruas.
      * 
      * @return int[][]
      */

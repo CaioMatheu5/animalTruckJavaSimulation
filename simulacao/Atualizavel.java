@@ -1,6 +1,6 @@
 package simulacao;
 
 interface Atualizavel{
-    /**Método que define como o Atualizavel deve agir na janela de simulação*/
+    /**Metodo que define como o Atualizavel deve agir na janela de simulacao*/
     void executarAcao();
 }
