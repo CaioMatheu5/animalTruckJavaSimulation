@@ -13,7 +13,7 @@ public abstract class Item {
     private Image imagem;
 
     /**
-     * Cria uma item a partir de uma localizacao.
+     * Cria um item a partir de uma localizacao.
      * @param localizacao
      */
     public Item(Localizacao localizacao){
